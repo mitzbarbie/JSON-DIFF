@@ -1,17 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-  hello m8
+  <div id="wrapper">
+    <div class="header">
+      <h1>hello m8 {{ test }}</h1>
+    </div>
+
+    <div class="input">
+      <div class="container">
+        <div class="input">
+          <input
+            class="input-1"
+            type="text"
+            placeholder="Enter JSON to compare"
+          />
+        </div>
+        <div class="input-compare-btn">
+          <button>compare</button>
+        </div>
+        <div class="input">
+          <input
+            class="input-2"
+            type="text"
+            placeholder="Enter JSON to compare"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      test: "haha",
+    };
   },
+  components: {},
 };
 </script>
 
@@ -23,5 +48,23 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container {
+}
+
+.input {
+  display: inline-block;
+}
+
+.input-compare-btn {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.input-1,
+.input-2 {
+  width: 400px;
+  height: 400px;
 }
 </style>
