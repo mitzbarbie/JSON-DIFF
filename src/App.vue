@@ -6,13 +6,21 @@
 
     <div class="container">
       <div class="input">
-        <textarea placeholder="Enter JSON to compare!"></textarea>
+        <textarea
+          v-model="input1"
+          type="string"
+          placeholder="Enter JSON to compare!"
+        ></textarea>
       </div>
       <div class="input-compare-btn">
-        <button @click="test11">compare</button>
+        <button type="button" @click="getData">compare</button>
       </div>
       <div class="input">
-        <textarea placeholder="Enter JSON to compare!"></textarea>
+        <textarea
+          v-model="input2"
+          type="string"
+          placeholder="Enter JSON to compare!"
+        ></textarea>
       </div>
     </div>
   </div>
@@ -24,14 +32,45 @@ export default {
   data() {
     return {
       test: "haha",
+      input1: "",
+      input2: "",
     };
   },
+  // watch: {
+  //   input1() {
+  //     console.log(this.input1);
+  //   },
+  // },
   methods: {
-    test11() {
-      console.log("test");
+    getData() {
+      console.log(this.input1, this.input2);
+      if (this.input1 !== this.input2) {
+        alert("this is not same!");
+      }
+    },
+    sameData() {
+      // this.input1 = this.input2;
     },
   },
   components: {},
+  // beforeCreate() {
+  //   console.log("beforeCreate");
+  // },
+  // created() {
+  //   console.log("created");
+  // },
+  // beforeMount() {
+  //   console.log("beforeMount");
+  // },
+  // mounted() {
+  //   console.log("mounted");
+  // },
+  // beforeUpdate() {
+  //   console.log("beforeUpdate");
+  // },
+  // updated() {
+  //   console.log("updated");
+  // },
 };
 </script>
 
